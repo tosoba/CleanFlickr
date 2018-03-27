@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GalleryRouterInput {
     func showPhotoViewController()
+    func passPhoto(_ photo: Photo, for segue: UIStoryboardSegue)
 }
 
 protocol GalleryWorkerInput {

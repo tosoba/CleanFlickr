@@ -12,7 +12,6 @@ import SDWebImage
 class GalleryViewController: UIViewController {
     
     @IBOutlet weak var photosCollectionView: UICollectionView!
-    
     @IBOutlet weak var photosSearchBar: UISearchBar!
     
     var interactor: GalleryInteractorInput!
@@ -21,6 +20,8 @@ class GalleryViewController: UIViewController {
     private var photos: [Photo] = []
     private var currentPage = 1
     private var totalPages = 1
+    
+    private var selectedPhoto: Photo?
     
     private var lastSearchedTag = "" {
         didSet {
@@ -36,14 +37,18 @@ class GalleryViewController: UIViewController {
         super.awakeFromNib()
         GalleryConfigurator.sharedInstance.configure(self)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
         photosSearchBar.delegate = self
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let photo = selectedPhoto else { return }
+        router.passPhoto(photo, for: segue)
+    }
 }
 
 extension GalleryViewController: GalleryViewControllerInput {
@@ -71,7 +76,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if currentPage < totalPages {
-            return photos.count // all photo cells + loading cell
+            return photos.count + 1 // all photo cells + loading cell
         }
         return photos.count
     }
@@ -100,7 +105,8 @@ extension GalleryViewController: UICollectionViewDataSource {
 
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // segue
+        selectedPhoto = photos[indexPath.row]
+        router.showPhotoViewController()
     }
 }
 

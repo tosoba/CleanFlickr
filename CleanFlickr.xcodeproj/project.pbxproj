@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10A6312C4745E8DCF833719C /* Pods_CleanFlickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A4D94D76DA9695123D0AC42 /* Pods_CleanFlickr.framework */; };
+		3358A3C1206A471200F14B8C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A3C0206A471200F14B8C /* PhotoViewController.swift */; };
 		33C2909420698F92006AB257 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2909320698F92006AB257 /* APIClient.swift */; };
 		33C2909620699A1B006AB257 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2909520699A1B006AB257 /* GalleryCollectionViewCell.swift */; };
 		33C2909820699D0C006AB257 /* GalleryCollectionViewLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C2909720699D0C006AB257 /* GalleryCollectionViewLoadingCell.swift */; };
@@ -23,12 +24,12 @@
 		33F3EC6E20697E1000A9A395 /* GalleryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EC6D20697E1000A9A395 /* GalleryModels.swift */; };
 		33F3EC74206984C000A9A395 /* GalleryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EC73206984C000A9A395 /* GalleryRouter.swift */; };
 		33F3EC762069851F00A9A395 /* GalleryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EC752069851F00A9A395 /* GalleryContract.swift */; };
-		33F3EC78206986B500A9A395 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EC77206986B500A9A395 /* BaseRouter.swift */; };
 		33F3EC7C20698D6200A9A395 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3EC7B20698D6200A9A395 /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A4D94D76DA9695123D0AC42 /* Pods_CleanFlickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanFlickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358A3C0206A471200F14B8C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		33C2909320698F92006AB257 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		33C2909520699A1B006AB257 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		33C2909720699D0C006AB257 /* GalleryCollectionViewLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewLoadingCell.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		33F3EC6D20697E1000A9A395 /* GalleryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryModels.swift; sourceTree = "<group>"; };
 		33F3EC73206984C000A9A395 /* GalleryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryRouter.swift; sourceTree = "<group>"; };
 		33F3EC752069851F00A9A395 /* GalleryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryContract.swift; sourceTree = "<group>"; };
-		33F3EC77206986B500A9A395 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		33F3EC7B20698D6200A9A395 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		3D701235D466443C07A9297A /* Pods-CleanFlickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanFlickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanFlickr/Pods-CleanFlickr.release.xcconfig"; sourceTree = "<group>"; };
 		469A126E294AC7A900087692 /* Pods-CleanFlickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanFlickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanFlickr/Pods-CleanFlickr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3358A3BF206A46F200F14B8C /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				3358A3C0206A471200F14B8C /* PhotoViewController.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		33C2909920699D58006AB257 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +103,7 @@
 		33F3EC5120697CEF00A9A395 /* CleanFlickr */ = {
 			isa = PBXGroup;
 			children = (
-				33F3EC702069833E00A9A395 /* Base */,
+				3358A3BF206A46F200F14B8C /* Photo */,
 				33F3EC6F206982C000A9A395 /* Network */,
 				33F3EC6420697DB500A9A395 /* Gallery */,
 				33F3EC5220697CEF00A9A395 /* AppDelegate.swift */,
@@ -129,14 +137,6 @@
 				33C2909320698F92006AB257 /* APIClient.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		33F3EC702069833E00A9A395 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				33F3EC77206986B500A9A395 /* BaseRouter.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		44727772C30C7C656A21C4EC /* Frameworks */ = {
@@ -298,11 +298,11 @@
 				33F3EC5320697CEF00A9A395 /* AppDelegate.swift in Sources */,
 				33F3EC7C20698D6200A9A395 /* APIRequest.swift in Sources */,
 				33C2909820699D0C006AB257 /* GalleryCollectionViewLoadingCell.swift in Sources */,
-				33F3EC78206986B500A9A395 /* BaseRouter.swift in Sources */,
 				33F3EC74206984C000A9A395 /* GalleryRouter.swift in Sources */,
 				33F3EC762069851F00A9A395 /* GalleryContract.swift in Sources */,
 				33C2909620699A1B006AB257 /* GalleryCollectionViewCell.swift in Sources */,
 				33C2909420698F92006AB257 /* APIClient.swift in Sources */,
+				3358A3C1206A471200F14B8C /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

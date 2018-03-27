@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Gallery View Controller-->
+        <!--Gallery-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GalleryViewController" customModule="CleanFlickr" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="drw-op-7fm">
+                            <searchBar contentMode="redraw" placeholder="Search photos" translatesAutoresizingMaskIntoConstraints="NO" id="drw-op-7fm">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -44,7 +44,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5b2-CV-I2o">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5b2-CV-I2o">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
@@ -94,26 +94,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H7l-Cm-ANX"/>
+                    <navigationItem key="navigationItem" title="Gallery" id="H7l-Cm-ANX"/>
                     <connections>
                         <outlet property="photosCollectionView" destination="sZg-4Q-MSY" id="9dV-UA-x0q"/>
                         <outlet property="photosSearchBar" destination="drw-op-7fm" id="B3F-xt-Bmw"/>
-                        <segue destination="klD-3h-Qwi" kind="show" identifier="PhotoSegue" id="Fmq-kP-Xpf"/>
+                        <segue destination="klD-3h-Qwi" kind="show" identifier="ShowPhotoSegue" id="Fmq-kP-Xpf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="beu-7z-5jF">
             <objects>
-                <viewController id="klD-3h-Qwi" sceneMemberID="viewController">
+                <viewController id="klD-3h-Qwi" customClass="PhotoViewController" customModule="CleanFlickr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cub-no-1bx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-vG-qb6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-vG-qb6">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbb-fo-QXB">
@@ -148,6 +148,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ua8-hi-i2Q"/>
                     </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="PNg-vG-qb6" id="DAN-m1-dEo"/>
+                        <outlet property="photoTitleLabel" destination="KG0-pn-kwa" id="dWf-2C-smb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l56-Pr-PE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
